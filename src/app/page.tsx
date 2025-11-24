@@ -9,6 +9,7 @@ import { DATA } from "@/data/resume";
 import Link from "next/link";
 import Markdown from "react-markdown";
 import { BLOG_POSTS } from "@/data/blog";
+import { UnifiedCard } from "@/components/certificate-card";
 
 
 const BLUR_FADE_DELAY = 0.04;
@@ -138,14 +139,11 @@ export default function Page() {
                 delay={BLUR_FADE_DELAY * 12 + id * 0.05}
               >
                 <ProjectCard
-                  href={project.href}
                   key={project.title}
                   title={project.title}
                   description={project.description}
                   dates={project.dates}
                   tags={project.technologies}
-                  image={project.image}
-                  video={project.video}
                   links={project.links}
                 />
               </BlurFade>
@@ -153,6 +151,43 @@ export default function Page() {
           </div>
         </div>
       </section>
+      <section id="certificates">
+        <div className="space-y-12 w-full py-12">
+          <BlurFade delay={BLUR_FADE_DELAY * 17}>
+            <div className="flex flex-col items-center justify-center space-y-4 text-center">
+              <div className="space-y-2">
+                <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">
+                  Certifications
+                </div>
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
+                  Professional Development
+                </h2>
+                <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                  Passionate about continuous learning, I've enthusiastically pursued professional certifications to deepen my expertise and stay updated with the latest technologies. Each certificate represents my commitment to excellence and mastery in my field.
+                </p>
+              </div>
+            </div>
+          </BlurFade>
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 max-w-[800px] mx-auto">
+            {DATA.certificates.map((cert, id) => (
+              <BlurFade
+                key={cert.title}
+                delay={BLUR_FADE_DELAY * 18 + id * 0.05}
+              >
+                <UnifiedCard
+                  title={cert.title}
+                  subtitle={cert.subtitle}
+                  date={cert.date}
+                  category={cert.category}
+                  credentialUrl={cert.credentialUrl}
+                  isClickable={!!cert.credentialUrl}
+                />
+              </BlurFade>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section id="hackathons">
         <div className="space-y-12 w-full py-12">
           <BlurFade delay={BLUR_FADE_DELAY * 13}>
