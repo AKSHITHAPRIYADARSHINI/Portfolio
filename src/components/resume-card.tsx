@@ -30,6 +30,11 @@ export const ResumeCard = ({
   description,
 }: ResumeCardProps) => {
   const [isExpanded, setIsExpanded] = React.useState(false);
+  const [mounted, setMounted] = React.useState(false);
+
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const handleClick = () => {
     if (description) {
@@ -86,7 +91,7 @@ export const ResumeCard = ({
             </div>
             {subtitle && <div className="font-sans text-xs">{subtitle}</div>}
           </CardHeader>
-          {description && (
+          {description && mounted && (
             <motion.div
               initial={{ opacity: 0, height: 0 }}
               animate={{
