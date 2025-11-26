@@ -150,28 +150,24 @@ export const DATA = {
   ],
   projects: [
     {
-      title: "Automatic Chat",
-      href: "https://automatic.chat",
-      dates: "April 2023 - March 2024",
+      title: "AI-Driven Multi-Agent E-Commerce Platform",
+      //href: "https://automatic.chat",
+      dates: "August 2025 - November 2025",
       active: true,
       description:
-        "Developed an AI Customer Support Chatbot which automatically responds to customer support tickets using the latest GPT models.",
+        "A comparative study of four AI-assisted multi-agent orchestration workflows, AutoGen Predefined, AutoGen Round Robin, LangChain Nested Sequential, and LangChain Round Robin: used to design, build, test, and document an Electric Appliances E-Commerce Platform. Includes full notebooks, artifacts, and reproducible environment setup.",
       technologies: [
-        "Next.js",
-        "Typescript",
-        "PostgreSQL",
-        "Prisma",
-        "TailwindCSS",
-        "Shadcn UI",
-        "Magic UI",
-        "Stripe",
-        "Cloudflare Workers",
+        "Replicate API",
+        "Open API",
+        "Ollama",
+        "Python Notebook",
+        "Virtual Environments",
       ],
       links: [
         {
-          type: "Website",
-          href: "https://automatic.chat",
-          icon: <Icons.globe className="size-3" />,
+          type: "Source",
+          href: "https://github.com/AKSHITHAPRIYADARSHINI/AI-Driven-Multi-Agent-E-Commerce-Platform-AutoGen-LangChain-Experiments-",
+          icon: <Icons.github className="size-3" />,
         },
       ],
       image: "",
@@ -372,7 +368,7 @@ export const DATA = {
       links: [
         {
           title: "Organization",
-          icon: <Icons.github className="h-4 w-4" />,
+          icon: <Icons.globe className="h-4 w-4" />,
           href: "https://www.rmkec.ac.in/2023/",
         },
       ],
