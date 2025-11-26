@@ -73,7 +73,7 @@ export const DATA = {
       },
       X: {
         name: "TryHackMe",
-        url: "https://tryhackme.com/p/AkshithaPriyad",
+        url: "https://1drv.ms/b/c/4afe6308ae928d0e/IQB6Hy8X-vvnQ4NvOMXhpE2DAQXEqgsEERnWfcOZVZz3kcg?e=osutjM",
         icon: Icons.x,
         navbar: false,
       },
@@ -85,7 +85,7 @@ export const DATA = {
       },
       email: {
         name: "Send Email",
-        url: "#",
+        url: "akshipriya14@gmail.com",
         icon: Icons.email,
 
         navbar: false,
