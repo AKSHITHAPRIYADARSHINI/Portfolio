@@ -18,6 +18,8 @@ interface Props {
   dates: string;
   tags: readonly string[];
   link?: string;
+  image?: string;
+  video?: string;
   links?: readonly {
     icon: React.ReactNode;
     type: string;
@@ -33,6 +35,8 @@ export function ProjectCard({
   dates,
   tags,
   link,
+  image,
+  video,
   links,
   className,
 }: Props) {
@@ -42,14 +46,40 @@ export function ProjectCard({
         "flex flex-col overflow-hidden border hover:shadow-lg transition-all duration-300 ease-out h-full"
       }
     >
+      {(image || video) && (
+        <div className="overflow-hidden">
+          {video && (
+            <video
+              src={video}
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="pointer-events-none mx-auto h-40 w-full object-cover object-top"
+            />
+          )}
+          {image && !video && (
+            <Image
+              src={image}
+              alt={title}
+              width={500}
+              height={300}
+              className="h-40 w-full overflow-hidden object-cover object-top"
+            />
+          )}
+        </div>
+      )}
       <CardHeader className="px-2">
         <div className="space-y-1">
-          <Link
-            href={href || "#"}
-            className={cn("block cursor-pointer hover:underline", className)}
-          >
-            <CardTitle className="mt-1 text-base">{title}</CardTitle>
-          </Link>
+          <div className={cn("block", className)}>
+            {href && href !== "#" ? (
+              <Link href={href} className="hover:underline">
+                <CardTitle className="mt-1 text-base">{title}</CardTitle>
+              </Link>
+            ) : (
+              <CardTitle className="mt-1 text-base">{title}</CardTitle>
+            )}
+          </div>
           <time className="font-sans text-xs">{dates}</time>
           <div className="hidden font-sans text-xs underline print:visible">
             {link?.replace("https://", "").replace("www.", "").replace("/", "")}
@@ -78,9 +108,9 @@ export function ProjectCard({
         {links && links.length > 0 && (
           <div className="flex flex-row flex-wrap items-start gap-1">
             {links?.map((link, idx) => (
-              <Link 
-                href={link?.href} 
-                key={idx} 
+              <Link
+                href={link?.href}
+                key={idx}
                 target="_blank"
                 className="inline-block"
               >

@@ -46,6 +46,13 @@ export const ResumeCard = ({
     <div
       className="block cursor-pointer"
       onClick={handleClick}
+      role="button"
+      tabIndex={0}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' && description) {
+          setIsExpanded(!isExpanded);
+        }
+      }}
     >
       <Card className="flex">
         <div className="flex-none">
