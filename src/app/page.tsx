@@ -68,8 +68,8 @@ export default function Page() {
                 altText={work.company}
                 title={work.company}
                 subtitle={work.title}
-                href={work.href}
-                badges={work.badges}
+              //  href={work.href}
+               // badges={work.badges}
                 period={`${work.start} - ${work.end ?? "Present"}`}
                 description={work.description}
               />
@@ -241,15 +241,14 @@ export default function Page() {
                 Get in Touch
               </h2>
               <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Want to chat? Just shoot me a dm{" "}
+                Got an interesting opportunity or just want to chat? Contact me on mail. And this is my{" "}
                 <Link
                   href={DATA.contact.social.X.url}
                   className="text-blue-500 hover:underline"
                 >
-                  with a direct question on twitter
+                resume. 
                 </Link>{" "}
-                and I&apos;ll respond whenever I can. I will ignore all
-                soliciting.
+                Always open to exciting projects and collaborations!
               </p>
             </div>
           </BlurFade>
