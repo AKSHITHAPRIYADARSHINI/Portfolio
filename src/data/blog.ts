@@ -31,7 +31,7 @@ function getMDXFiles(dir: string) {
     .readdirSync(dir)
     .filter(
       (file) =>
-        path.extname(file) === ".mdx" && file !== "hello-world.mdx" // Exclude hello-world
+        path.extname(file) === ".mdx"
     );
 }
 

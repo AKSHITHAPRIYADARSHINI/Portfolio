@@ -21,17 +21,16 @@ export default function Page() {
         <div className="mx-auto w-full max-w-2xl space-y-8">
           <div className="gap-2 flex justify-between">
             <div className="flex-col flex flex-1 space-y-1.5">
-              <BlurFadeText
-                delay={BLUR_FADE_DELAY}
-                className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none"
-                yOffset={8}
-                text={`Hi, I'm ${DATA.name.split(" ")[0]} 👋`}
-              />
-              <BlurFadeText
-                className="max-w-[600px] md:text-xl"
-                delay={BLUR_FADE_DELAY}
-                text={DATA.description}
-              />
+              <BlurFade delay={BLUR_FADE_DELAY}>
+                <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
+                  Hi, I&apos;m {DATA.name.split(" ")[0]} 👋
+                </h1>
+              </BlurFade>
+              <BlurFade delay={BLUR_FADE_DELAY * 2}>
+                <p className="max-w-[600px] md:text-xl">
+                  {DATA.description}
+                </p>
+              </BlurFade>
             </div>
             <BlurFade delay={BLUR_FADE_DELAY}>
               <Avatar className="size-28 border">
@@ -163,7 +162,7 @@ export default function Page() {
                   Professional Development
                 </h2>
                 <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  Passionate about continuous learning, I've enthusiastically pursued professional certifications to deepen my expertise and stay updated with the latest technologies. Each certificate represents my commitment to excellence and mastery in my field.
+                  Passionate about continuous learning, I&apos;sve enthusiastically pursued professional certifications to deepen my expertise and stay updated with the latest technologies. Each certificate represents my commitment to excellence and mastery in my field.
                 </p>
               </div>
             </div>
