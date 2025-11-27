@@ -52,7 +52,7 @@ export const DATA = {
   ],
   contact: {
     email: "akshipriya14@gmail.com",
-    tel: "+1(312)933-7752",
+    //tel: "+1(312)933-7752",
     social: {
       GitHub: {
         name: "GitHub",
@@ -112,12 +112,9 @@ export const DATA = {
       end: "April 2024",
       description: (
         <ul className="space-y-1 text-muted-foreground">
-          <li>• Enhanced internal application using Struts (Java & JavaScript) for Ford Europe users</li>
-          <li>• Developed automation solution on Google Cloud Platform (GCP) benefiting 500+ users across Europe</li>
-          <li>• Contributed to GCP security using Forseti (FOSCA) ensuring compliance with internal policies</li>
-          <li>• Completed NLP project generating topics from descriptions using large language models (LLMs)</li>
-          <li>• Created ticket analysis solution with Excel export helping team of ~20 members manage hundreds of tickets weekly</li>
-          <li>• Collaborated with multiple departments including cybersecurity team on security policies and best practices</li>
+          <li>• Improved internal Struts-based application for Ford Europe.</li>
+          <li>• Completed an NLP project using LLMs for topic generation.</li>
+          <li>• Developed a ticket-analysis tool with Excel export for a 20-member team.</li>
         </ul>
       ),
     },
@@ -145,16 +142,16 @@ export const DATA = {
       href: "https://sjps.edu.in/",
       degree: "High School",
       logoUrl: "/laurier.png",
-      start: "2020",
-      end: "2013",
+      start: "2013",
+      end: "2020",
     },
     {
       school: "Boaz Public School",
       href: "https://boazpublicschool.com/",
       degree: "Primary School",
       logoUrl: "/ib.jpg",
-      start: "2012",
-      end: "2016",
+      start: "2004",
+      end: "2013",
     },
   ],
   projects: [
