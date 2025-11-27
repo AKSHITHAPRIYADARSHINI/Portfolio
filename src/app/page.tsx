@@ -240,12 +240,19 @@ export default function Page() {
                 Get in Touch
               </h2>
               <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Got an interesting opportunity or just want to chat? Contact me on mail. And this is my{" "}
+                Got an interesting opportunity or just want to chat? Contact me on{" "}
+                <Link
+                  href={`mailto:${DATA.contact.email}`}
+                  className="text-blue-500 hover:underline"
+                >
+                  mail
+                </Link>
+                . And this is my{" "}
                 <Link
                   href={DATA.contact.social.X.url}
                   className="text-blue-500 hover:underline"
                 >
-                resume. 
+                  resume.
                 </Link>{" "}
                 Always open to exciting projects and collaborations!
               </p>
