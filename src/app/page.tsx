@@ -254,7 +254,7 @@ export default function Page() {
                 >
                   resume.
                 </Link>{" "}
-                Always open to exciting projects and collaborations!
+                 Always open to exciting projects and collaborations!
               </p>
             </div>
           </BlurFade>
