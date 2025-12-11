@@ -23,7 +23,6 @@ type BlogPost = {
   slug: string;
   metadata?: Metadata;
   source?: string;
-  link?: string;
 };
 
 function getMDXFiles(dir: string) {
@@ -96,7 +95,7 @@ export async function getMediumPosts(): Promise<BlogPost[]> {
       publishedAt: item.pubDate || new Date().toISOString(),
       summary: item.contentSnippet?.substring(0, 150) || "No summary available",
       slug: item.link?.split("/").pop() || "",
-      link: item.link,
+      source: item.link,
     }));
   } catch (error) {
     console.error("Error fetching Medium posts:", error);
