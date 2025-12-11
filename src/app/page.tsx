@@ -252,9 +252,9 @@ export default function Page() {
                   href={DATA.contact.social.X.url}
                   className="text-blue-500 hover:underline"
                 >
-                  resume.
-                </Link>{" "}
-                 Always open to exciting projects and collaborations!
+                  resume
+                </Link>
+                . Always open to exciting projects and collaborations!
               </p>
             </div>
           </BlurFade>

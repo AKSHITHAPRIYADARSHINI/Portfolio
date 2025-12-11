@@ -7,6 +7,8 @@ export const metadata = {
   description: "My thoughts on software development, life, and more.",
 };
 
+export const revalidate = 0;
+
 const BLUR_FADE_DELAY = 0.04;
 
 type Post = {
@@ -18,11 +20,10 @@ type Post = {
   link?: string | null;
 };
 
-export default async function BlogPage() {
+async function BlogPage() {
   const localPosts = await getBlogPosts();
   const mediumPosts = await getMediumPosts();
 
-  // Combine posts
   const allPosts: Post[] = [
     ...localPosts.map((post) => ({
       slug: post.slug,
@@ -42,7 +43,6 @@ export default async function BlogPage() {
     })),
   ];
 
-  // Sort by date (newest first)
   const sortedPosts = allPosts.sort((a, b) => {
     const dateA = new Date(a.publishedAt).getTime();
     const dateB = new Date(b.publishedAt).getTime();
@@ -91,3 +91,5 @@ export default async function BlogPage() {
     </section>
   );
 }
+
+export default BlogPage;

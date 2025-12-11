@@ -21,9 +21,9 @@ type BlogPost = {
   publishedAt: string;
   summary: string;
   slug: string;
-  content: "local" | "external";
-  link?: string;
+  metadata?: Metadata;
   source?: string;
+  link?: string;
 };
 
 function getMDXFiles(dir: string) {
@@ -41,7 +41,6 @@ export async function markdownToHTML(markdown: string) {
     .use(remarkGfm)
     .use(remarkRehype)
     .use(rehypePrettyCode, {
-      // https://rehype-pretty.pages.dev/#usage
       theme: {
         light: "min-light",
         dark: "min-dark",
@@ -85,21 +84,19 @@ export async function getBlogPosts() {
   return getAllPosts(path.join(process.cwd(), "content"));
 }
 
-// Get Medium posts from RSS feed
 export async function getMediumPosts(): Promise<BlogPost[]> {
   try {
     const parser = new Parser();
     const feed = await parser.parseURL(
-      "https://medium.com/feed/@zukakzepri" // Replace with your Medium username
+      "https://medium.com/feed/@zukakzepri"
     );
 
     return feed.items.map((item) => ({
       title: item.title || "Untitled",
       publishedAt: item.pubDate || new Date().toISOString(),
       summary: item.contentSnippet?.substring(0, 150) || "No summary available",
-      link: item.link,
-      content: "external" as const,
       slug: item.link?.split("/").pop() || "",
+      link: item.link,
     }));
   } catch (error) {
     console.error("Error fetching Medium posts:", error);
@@ -107,37 +104,4 @@ export async function getMediumPosts(): Promise<BlogPost[]> {
   }
 }
 
-// Combine local MDX and Medium posts
-export async function getAllBlogPosts(): Promise<BlogPost[]> {
-  const localPosts = await getBlogPosts();
-  const mediumPosts = await getMediumPosts();
-
-  const combined: BlogPost[] = [
-    ...localPosts.map((post) => ({
-      title: post.metadata.title,
-      publishedAt: post.metadata.publishedAt,
-      summary: post.metadata.summary,
-      slug: post.slug,
-      content: "local" as const,
-      source: post.source,
-    })),
-    ...mediumPosts,
-  ];
-
-  // Sort by date (newest first)
-  return combined.sort(
-    (a, b) =>
-      new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
-  );
-}
-
-// Keep existing BLOG_POSTS for backward compatibility
-export const BLOG_POSTS = [
-  //{
-  //title: "Hello World",
-  //publishedAt: "2024-06-18",
-  //summary: "My first post on my new blog.",
-  //slug: "hello-world",
-  //content: "local" as const,
-  //},
-];
+export const BLOG_POSTS = [];
