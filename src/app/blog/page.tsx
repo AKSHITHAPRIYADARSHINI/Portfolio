@@ -7,7 +7,7 @@ export const metadata = {
   description: "My thoughts on software development, life, and more.",
 };
 
-export const revalidate = 0;
+export const revalidate = 3600;
 
 const BLUR_FADE_DELAY = 0.04;
 
@@ -20,7 +20,7 @@ type Post = {
   link?: string | null;
 };
 
-async function BlogPage() {
+export default async function BlogPage() {
   const localPosts = await getBlogPosts();
   const mediumPosts = await getMediumPosts();
 
@@ -39,7 +39,7 @@ async function BlogPage() {
       publishedAt: post.publishedAt,
       summary: post.summary,
       type: "external" as const,
-      link: post.link,
+      link: post.source,
     })),
   ];
 
@@ -91,5 +91,3 @@ async function BlogPage() {
     </section>
   );
 }
-
-export default BlogPage;
