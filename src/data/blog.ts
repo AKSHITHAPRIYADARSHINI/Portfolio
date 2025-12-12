@@ -102,5 +102,4 @@ export async function getMediumPosts(): Promise<BlogPost[]> {
     return [];
   }
 }
-
 export const BLOG_POSTS = [];
