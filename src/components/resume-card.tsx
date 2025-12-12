@@ -124,8 +124,7 @@ export const ResumeCard = ({
                 description
               )}
             </motion.div>
-          )}
-        </div>
+          )}</div>
       </Card>
     </div>
   );
