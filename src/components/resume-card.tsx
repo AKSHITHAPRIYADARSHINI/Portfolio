@@ -129,4 +129,4 @@ export const ResumeCard = ({
       </Card>
     </div>
   );
-};
+}:
