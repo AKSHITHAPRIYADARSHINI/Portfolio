@@ -7,7 +7,6 @@ export const metadata = {
   description: "My thoughts on software development, life, and more.",
 };
 
-
 const BLUR_FADE_DELAY = 0.04;
 
 type Post = {
