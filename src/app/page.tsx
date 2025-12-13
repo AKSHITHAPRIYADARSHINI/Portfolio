@@ -11,7 +11,7 @@ import Markdown from "react-markdown";
 import { UnifiedCard } from "@/components/certificate-card";
 
 const BLUR_FADE_DELAY = 0.04;
-export const dynamic = "force-dynamic";
+
 export default async function Page() {
   return (
     <main className="flex flex-col min-h-[100dvh] space-y-10">
