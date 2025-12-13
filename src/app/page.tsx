@@ -8,9 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { DATA } from "@/data/resume";
 import Link from "next/link";
 import Markdown from "react-markdown";
-import { BLOG_POSTS } from "@/data/blog";
 import { UnifiedCard } from "@/components/certificate-card";
-
 
 const BLUR_FADE_DELAY = 0.04;
 
@@ -41,6 +39,7 @@ export default function Page() {
           </div>
         </div>
       </section>
+
       <section id="about">
         <BlurFade delay={BLUR_FADE_DELAY * 3}>
           <h2 className="text-xl font-bold">About</h2>
@@ -51,6 +50,7 @@ export default function Page() {
           </Markdown>
         </BlurFade>
       </section>
+
       <section id="work">
         <div className="flex min-h-0 flex-col gap-y-3">
           <BlurFade delay={BLUR_FADE_DELAY * 5}>
@@ -67,8 +67,6 @@ export default function Page() {
                 altText={work.company}
                 title={work.company}
                 subtitle={work.title}
-              //  href={work.href}
-               // badges={work.badges}
                 period={`${work.start} - ${work.end ?? "Present"}`}
                 description={work.description}
               />
@@ -76,6 +74,7 @@ export default function Page() {
           ))}
         </div>
       </section>
+
       <section id="education">
         <div className="flex min-h-0 flex-col gap-y-3">
           <BlurFade delay={BLUR_FADE_DELAY * 7}>
@@ -99,6 +98,7 @@ export default function Page() {
           ))}
         </div>
       </section>
+
       <section id="skills">
         <div className="flex min-h-0 flex-col gap-y-3">
           <BlurFade delay={BLUR_FADE_DELAY * 9}>
@@ -113,6 +113,7 @@ export default function Page() {
           </div>
         </div>
       </section>
+
       <section id="projects">
         <div className="space-y-12 w-full py-12">
           <BlurFade delay={BLUR_FADE_DELAY * 11}>
@@ -150,6 +151,7 @@ export default function Page() {
           </div>
         </div>
       </section>
+
       <section id="certificates">
         <div className="space-y-12 w-full py-12">
           <BlurFade delay={BLUR_FADE_DELAY * 17}>
@@ -162,7 +164,7 @@ export default function Page() {
                   Professional Development
                 </h2>
                 <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  Passionate about continuous learning, I&apos;sve enthusiastically pursued professional certifications to deepen my expertise and stay updated with the latest technologies. Each certificate represents my commitment to excellence and mastery in my field.
+                  Passionate about continuous learning, I&apos;ve enthusiastically pursued professional certifications to deepen my expertise and stay updated with the latest technologies. Each certificate represents my commitment to excellence and mastery in my field.
                 </p>
               </div>
             </div>
@@ -229,6 +231,7 @@ export default function Page() {
           </BlurFade>
         </div>
       </section>
+
       <section id="contact">
         <div className="grid items-center justify-center gap-4 px-4 text-center md:px-6 w-full py-12">
           <BlurFade delay={BLUR_FADE_DELAY * 16}>
