@@ -196,10 +196,15 @@ export const DATA = {
       ],
       links: [
         {
+          type: "Website",
+          href: "https://ashitaa-a76b8.web.app/",
+          icon: <Icons.globe className="size-3" />,
+        },
+        {
           type: "Source",
           href: "https://github.com/AKSHITHAPRIYADARSHINI/MAC-Scheme-Simulation-Forgery-Attack",
           icon: <Icons.github className="size-3" />,
-        },
+        },  
       ],
       image: "",
       video: "https://cdn.magicui.design/bento-grid.mp4",
