@@ -71,15 +71,15 @@ export function ProjectCard({
       )}
       <CardHeader className="px-2">
         <div className="space-y-1">
-          <div className={cn("block", className)}>
-            {href && href !== "#" ? (
-              <Link href={href} className="hover:underline">
-                <CardTitle className="mt-1 text-base">{title}</CardTitle>
-              </Link>
-            ) : (
+          {href && href !== "#" ? (
+            <Link href={href} className={cn("block hover:underline", className)}>
               <CardTitle className="mt-1 text-base">{title}</CardTitle>
-            )}
-          </div>
+            </Link>
+          ) : (
+            <div className={cn("block", className)}>
+              <CardTitle className="mt-1 text-base">{title}</CardTitle>
+            </div>
+          )}
           <time className="font-sans text-xs">{dates}</time>
           <div className="hidden font-sans text-xs underline print:visible">
             {link?.replace("https://", "").replace("www.", "").replace("/", "")}

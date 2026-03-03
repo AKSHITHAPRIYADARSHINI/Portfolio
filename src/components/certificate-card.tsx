@@ -29,7 +29,7 @@ export function UnifiedCard({
   tags,
   isClickable = false,
 }: UnifiedCardProps) {
-  const cardContent = (
+  return (
     <Card
       className={
         "flex flex-col overflow-hidden border hover:shadow-lg transition-all duration-300 ease-out h-full"
@@ -81,14 +81,4 @@ export function UnifiedCard({
       )}
     </Card>
   );
-
-  if (isClickable && credentialUrl) {
-    return (
-      <Link href={credentialUrl} target="_blank" rel="noopener noreferrer">
-        {cardContent}
-      </Link>
-    );
-  }
-
-  return cardContent;
 }

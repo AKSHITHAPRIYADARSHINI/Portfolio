@@ -6,6 +6,10 @@ const nextConfig = {
     unoptimized: true,
   },
   trailingSlash: true,
+  webpack: (config, { isServer }) => {
+    config.cache = false;
+    return config;
+  },
 };
 
 export default nextConfig;

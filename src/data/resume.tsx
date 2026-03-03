@@ -104,6 +104,21 @@ export const DATA = {
 
   work: [
     {
+      company: "Value Aligners",
+      location: "Remote",
+      title: "Cybersecuirty Marketing Intern",
+      logoUrl: "/vl.jpg",
+      start: "Feburary 2026",
+      end: "Present",
+      description: (
+        <ul className="space-y-1 text-muted-foreground">
+          <li>• Researched 20+ cybersecurity vendors and analyzed emerging cloud security trends.</li>
+          <li>• Created AWS security-focused content and performed SEO for digital campaigns.</li>
+          <li>• Managed encrypted vendor databases and supported cloud operations within SDLC.</li>
+        </ul>
+      ),
+    },
+    {
       company: "Ford Motor Pvt Ltd",
       location: "Onsite",
       title: "Software Developer Intern",
@@ -300,6 +315,38 @@ export const DATA = {
   ],
 
   hackathons: [
+    {
+      title: "Lean Education Agile Foundary Lab - The Agile Mind",
+      dates: "Feburary 9 - Present, 2026",
+      location: "New York, New York ",
+      description:
+        "I collaborate with a team of four (Team Virus). We were assigned a school security–related problem statement by The Agile Mind and are responsible for developing and presenting two innovative solution approaches. The project follows Agile methodology, emphasizing teamwork, iterative development, and problem-solving.",
+      image: "/leaf.jpg",
+      href: "https://www.l-eaflab.org/",
+      links: [
+        {
+          title: "Organization",
+          icon: <Icons.globe className="h-4 w-4" />,
+          href: "https://www.l-eaflab.org/",
+        },
+      ],  
+    },
+    {
+      title: "ChiBrrCon 26'",
+      dates: "Feburary 5, 2026",
+      location: "Chicago, Illinois ",
+      description:
+        "ChiBrrCon ’26 is a one-day, high-impact cybersecurity conference in Chicago focused on Leadership, Artificial Intelligence, Identity and Access Management, and enterprise security. The event features 30 expert speakers delivering technical and strategic sessions, followed by a dynamic “B-Sides” after party.",
+      image: "/chi.png",
+      href: "https://chibrrcon.com/",
+      links: [
+        {
+          title: "Organization",
+          icon: <Icons.globe className="h-4 w-4" />,
+          href: "https://chibrrcon.com/",
+        },
+      ],  
+    },
     {
       title: "ISSA - Information Security Student Association",
       dates: "July 23rd - Present, 2025",
