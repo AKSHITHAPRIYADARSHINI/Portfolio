@@ -116,7 +116,7 @@ export const DATA = {
             <li>• Supporting the Summit’s mission to bridge tech innovation with policy leadership across critical infrastructure sectors.</li>
             <li>• Securing sponsors for The Cybersecurity Summit and facilitating weekly meetings with cybersecurity leaders across
                  critical infrastructure sectors.</li>
-            <li>• Nominated by Summit managers and selected from a group of 20+ interns to be a panelist at the upcoming CSS 16 Summit, representing the intern cohort in discussions centered on "Human-Led, AI-Powered.</li>
+            <li>• Nominated by Summit managers and selected from a group of 20+ interns to be a panelist at the upcoming CSS 16 Summit, representing the intern cohort in discussions centered on &quot;Human-Led, AI-Powered.&quot;</li>
           </ul>
         </div>
       ),
