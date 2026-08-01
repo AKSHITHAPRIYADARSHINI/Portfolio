@@ -375,12 +375,62 @@ export const DATA = {
 
   hackathons: [
     {
+      title: "HackwithChicago 3.0",
+      dates: "Apr 2nd - 4th, 2026",
+      location: "Chicago, Illinois",
+      description:
+        "Participated in HackWithChicago 3.0, developing ResearchGraph, an AI-powered research assistant that leverages Neo4j knowledge graphs, retrieval-augmented generation (RAG), and citation verification to help researchers explore academic literature with traceable evidence.",
+      icon: "public",
+      image:
+        "/hack.png",
+      links: [
+        {
+          title: "Source",
+          icon: <Icons.github className="h-4 w-4" />,
+          href: "https://researchgraph.kineloop.com/",
+
+        },
+      ],
+    },
+    {
+      title: "ISSA - MindHack 2026 (Volunteer and Participant)",
+      dates: "January 14 - April, 2026",
+      location: "Chicago, IL ",
+      description:
+"Collaborated with a team of volunteers to support ISSA MindHack 2026, helping conduct outreach to over 500 students and encouraging participation in the event. Competed as part of a five-member team in a cybersecurity scenario-based role-play challenge, solving complex problems without the use of electronic devices or internet access. Demonstrated teamwork, critical thinking, and effective decision-making under pressure, contributing to an outstanding team performance.",      
+      image: "/mind.png.png",
+      href: "https://mtap.io/event/MINDHACK2026?srsltid=AfmBOooJ5Asw0ApGi7KsbjCWQWLFeGsasluX76sX2Xh8IXVyhdErp_vB",
+      links: [
+        {
+          title: "Organization",
+          icon: <Icons.globe className="h-4 w-4" />,
+          href: "https://mtap.io/event/MINDHACK2026?srsltid=AfmBOooJ5Asw0ApGi7KsbjCWQWLFeGsasluX76sX2Xh8IXVyhdErp_vB",
+        },
+      ],  
+    },
+    {
       title: "Lean Education Agile Foundary Lab - The Agile Mind",
-      dates: "Feburary 9 - Present, 2026",
+      dates: "Feburary 9 - April, 2026",
       location: "New York, New York ",
       description:
         "I collaborate with a team of four (Team Virus). We were assigned a school security–related problem statement by The Agile Mind and are responsible for developing and presenting two innovative solution approaches. The project follows Agile methodology, emphasizing teamwork, iterative development, and problem-solving.",
       image: "/leaf.jpg",
+      href: "https://www.l-eaflab.org/",
+      links: [
+        {
+          title: "Organization",
+          icon: <Icons.globe className="h-4 w-4" />,
+          href: "https://www.l-eaflab.org/",
+        },
+      ],  
+    },
+    {
+      title: "Inaugural UpWise Coffee and Cyber",
+      dates: "March 25, 2026",
+      location: "South Carolina, SC",
+      description:
+        "Invited as a guest to the inaugural UpWiSE Coffee & Cyber event, where I engaged with cybersecurity professionals and shared insights alongside industry peers. The opportunity strengthened my professional network and highlighted my contributions through collaboration with The Agile Mind team.",
+      image: "/Inaug.png",
       href: "https://www.l-eaflab.org/",
       links: [
         {
@@ -403,6 +453,22 @@ export const DATA = {
           title: "Organization",
           icon: <Icons.globe className="h-4 w-4" />,
           href: "https://chibrrcon.com/",
+        },
+      ],  
+    },
+    {
+      title: "GDG Chicago Google (Google Developer Group)",
+      dates: "January 26, 2026",
+      location: "Chicago, Illinois ",
+      description:
+        "The session focused on building full-stack applications with Google Antigravity, and it offered valuable technical insights into modern development workflows, architecture, and best practices.",
+      image: "/gdg.png",
+      href: "https://chibrrcon.com/",
+      links: [
+        {
+          title: "Organization",
+          icon: <Icons.globe className="h-4 w-4" />,
+          href: "https://gdg.community.dev/",
         },
       ],  
     },
