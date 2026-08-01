@@ -1,6 +1,7 @@
+"use client";
+
 import { HackathonCard } from "@/components/hackathon-card";
 import BlurFade from "@/components/magicui/blur-fade";
-import BlurFadeText from "@/components/magicui/blur-fade-text";
 import { ProjectCard } from "@/components/project-card";
 import { ResumeCard } from "@/components/resume-card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -12,7 +13,7 @@ import { UnifiedCard } from "@/components/certificate-card";
 
 const BLUR_FADE_DELAY = 0.04;
 
-export default async function Page() {
+export default function Page() {
   return (
     <main className="flex flex-col min-h-[100dvh] space-y-10">
       <section id="hero">
@@ -51,11 +52,15 @@ export default async function Page() {
         </BlurFade>
       </section>
 
+      {/* Work Experience section - displays job history with optional nested roles */}
       <section id="work">
         <div className="flex min-h-0 flex-col gap-y-3">
+          {/* Section header */}
           <BlurFade delay={BLUR_FADE_DELAY * 5}>
             <h2 className="text-xl font-bold">Work Experience</h2>
           </BlurFade>
+
+          {/* Work entries with staggered animation */}
           {DATA.work.map((work, id) => (
             <BlurFade
               key={work.company}
@@ -68,7 +73,11 @@ export default async function Page() {
                 title={work.company}
                 subtitle={work.title}
                 period={`${work.start} - ${work.end ?? "Present"}`}
-                description={work.description}
+                description={(work as any).description}
+                // Render nested roles if available (e.g., Value Aligners has 3 sub-roles)
+                roles={(work as any).roles}
+                // Display location inline only for entries with nested roles
+                location={(work as any).roles ? work.location : undefined}
               />
             </BlurFade>
           ))}
@@ -93,6 +102,8 @@ export default async function Page() {
                 title={education.school}
                 subtitle={education.degree}
                 period={`${education.start} - ${education.end}`}
+                gpa={(education as any).gpa}
+                verifiedLink={(education as any).verifiedLink}
               />
             </BlurFade>
           ))}

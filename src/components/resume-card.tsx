@@ -5,9 +5,17 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardHeader } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
-import { ChevronRightIcon } from "lucide-react";
+import { ChevronRightIcon, CheckCircleIcon } from "lucide-react";
 import React from "react";
-import Link from "next/link"; 
+import Link from "next/link";
+
+interface RoleItem {
+  title: string;
+  start: string;
+  end: string;
+  location?: string;
+  description?: React.ReactNode;
+}
 
 interface ResumeCardProps {
   logoUrl: string;
@@ -18,6 +26,10 @@ interface ResumeCardProps {
   badges?: readonly string[];
   period: string;
   description?: string | React.ReactNode;
+  roles?: RoleItem[];
+  location?: string;
+  gpa?: string;
+  verifiedLink?: string;
 }
 
 export const ResumeCard = ({
@@ -29,16 +41,23 @@ export const ResumeCard = ({
   badges,
   period,
   description,
+  roles,
+  location,
+  gpa,
+  verifiedLink,
 }: ResumeCardProps) => {
   const [isExpanded, setIsExpanded] = React.useState(false);
+  const [expandedRole, setExpandedRole] = React.useState<string | null>(null);
   const [mounted, setMounted] = React.useState(false);
 
   React.useEffect(() => {
     setMounted(true);
   }, []);
 
+  const hasContent = description || roles;
+
   const handleClick = () => {
-    if (description) {
+    if (hasContent) {
       setIsExpanded(!isExpanded);
     }
   };
@@ -50,7 +69,7 @@ export const ResumeCard = ({
       role="button"
       tabIndex={0}
       onKeyDown={(e) => {
-        if (e.key === 'Enter' && description) {
+        if (e.key === 'Enter' && hasContent) {
           setIsExpanded(!isExpanded);
         }
       }}
@@ -75,7 +94,10 @@ export const ResumeCard = ({
                     {title}
                   </Link>
                 ) : (
-                  title
+                  <span>
+                    {title}
+                    {location && <span className="text-muted-foreground font-normal">, {location}</span>}
+                  </span>
                 )}
                 {badges && (
                   <span className="inline-flex gap-x-1">
@@ -90,7 +112,7 @@ export const ResumeCard = ({
                     ))}
                   </span>
                 )}
-                {description && (
+                {hasContent && (
                   <ChevronRightIcon
                     className={cn(
                       "size-4 translate-x-0 transform opacity-0 transition-all duration-300 ease-out group-hover:translate-x-1 group-hover:opacity-100",
@@ -103,9 +125,30 @@ export const ResumeCard = ({
                 {period}
               </div>
             </div>
-            {subtitle && <div className="font-sans text-xs">{subtitle}</div>}
+            {subtitle && (
+              <div className="font-sans text-xs inline-flex items-center gap-1">
+                <span>
+                  {subtitle}
+                  {gpa && (
+                    <span className="text-muted-foreground"> · GPA {gpa}/4.0</span>
+                  )}
+                </span>
+                {verifiedLink && (
+                  <Link
+                    href={verifiedLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="View credential"
+                    onClick={(e) => e.stopPropagation()}
+                    className="inline-flex hover:opacity-80 transition-opacity"
+                  >
+                    <CheckCircleIcon className="size-3.5 text-green-500" />
+                  </Link>
+                )}
+              </div>
+            )}
           </CardHeader>
-          {description && mounted && (
+          {hasContent && mounted && (
             <motion.div
               initial={{ opacity: 0, height: 0 }}
               animate={{
@@ -116,15 +159,56 @@ export const ResumeCard = ({
                 duration: 0.7,
                 ease: [0.16, 1, 0.3, 1],
               }}
-              className="mt-2 text-xs sm:text-sm px-4 pb-4"
+              className="mt-2 text-xs sm:text-sm px-4 pb-4 w-full"
             >
-              {typeof description === "string" ? (
-                <p>{description}</p>
+              {roles ? (
+                <div className="space-y-2">
+                  {roles.map((role, idx) => (
+                    <div key={idx}>
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setExpandedRole(expandedRole === role.title ? null : role.title);
+                        }}
+                        className="w-full flex items-center justify-between text-left py-1 hover:text-blue-500 transition-colors"
+                      >
+                        <div className="flex items-center gap-2 flex-1">
+                          <span className="text-muted-foreground">●</span>
+                          <span className="font-medium">{role.title}</span>
+                          <ChevronRightIcon
+                            className={cn(
+                              "size-3 text-muted-foreground transition-transform",
+                              expandedRole === role.title ? "rotate-90" : ""
+                            )}
+                          />
+                        </div>
+                        <span className="text-xs text-muted-foreground ml-2 whitespace-nowrap">
+                          {role.start} – {role.end}
+                        </span>
+                      </button>
+                      {expandedRole === role.title && (
+                        <div className="pl-6 pb-2 space-y-1">
+                          {role.location && (
+                            <p className="text-xs text-muted-foreground italic">{role.location}</p>
+                          )}
+                          {role.description}
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                </div>
               ) : (
-                description
+                <>
+                  {typeof description === "string" ? (
+                    <p>{description}</p>
+                  ) : (
+                    description
+                  )}
+                </>
               )}
             </motion.div>
-          )}</div>
+          )}
+        </div>
       </Card>
     </div>
   );

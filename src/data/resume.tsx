@@ -101,22 +101,55 @@ export const DATA = {
       },
     },
   },
-
   work: [
     {
       company: "Value Aligners",
-      location: "Remote",
-      title: "Cybersecuirty Marketing Intern",
+      location: "Oakland, California",
+      title: "Internship",
       logoUrl: "/vl.jpg",
-      start: "Feburary 2026",
-      end: "Present",
-      description: (
-        <ul className="space-y-1 text-muted-foreground">
-          <li>• Researched 20+ cybersecurity vendors and analyzed emerging cloud security trends.</li>
-          <li>• Created AWS security-focused content and performed SEO for digital campaigns.</li>
-          <li>• Managed encrypted vendor databases and supported cloud operations within SDLC.</li>
-        </ul>
-      ),
+      start: "February 2026", 
+      end: "May 2026",
+      roles: [ 
+        {
+          title: "Technical Operational Lead",
+          start: "Apr '26",
+          end: "May '26",
+          location: "Remote",
+          description: (
+            <ul className="space-y-1 text-muted-foreground ml-2">
+              <li>• Led a team of 7 across sales and marketing divisions.</li>
+              <li>• Managed Zoho CRM and Zoho Digital Marketing to streamline operations, optimize campaigns, and drive business growth.</li>
+              <li>• Streamlined internal workflows and supported data-driven decision-making to boost team productivity.</li>
+            </ul>
+          ),
+        },
+        {
+          title: "Cloud Engineer",
+          start: "Mar '26",
+          end: "Apr '26",
+          location: "Remote",
+          description: (
+            <ul className="space-y-1 text-muted-foreground ml-2">
+              <li>• Worked on GCP Virtual Machines to update and edit the company portfolio.</li>
+              <li>• Implemented a GRC (Governance, Risk, Compliance) Agentic AI to streamline compliance and risk management processes.</li>
+              <li>• Managed cloud resources and ensured smooth deployment of applications on GCP.</li>
+            </ul>
+          ),
+        },
+        {
+          title: "Cybersecurity Marketing Intern",
+          start: "Feb '26",
+          end: "Mar '26",
+          location: "Oakland, California",
+          description: (
+            <ul className="space-y-1 text-muted-foreground ml-2">
+              <li>• Researched 20+ cybersecurity vendors and analyzed emerging cloud security trends.</li>
+              <li>• Created AWS security-focused content and performed SEO for digital campaigns.</li>
+              <li>• Managed encrypted vendor databases and supported cloud operations within SDLC.</li>
+            </ul>
+          ),
+        },
+      ],
     },
     {
       company: "Ford Motor Pvt Ltd",
@@ -143,6 +176,8 @@ export const DATA = {
       logoUrl: "/buildspace.png",
       start: "2024",
       end: "2026",
+      gpa: "3.6",
+      verifiedLink: "#",
     },
     {
       school: "RMK Engineering College",
@@ -151,6 +186,8 @@ export const DATA = {
       logoUrl: "/waterloo.jpg",
       start: "2020",
       end: "2024",
+      gpa: "3.4",
+      verifiedLink: "#",
     },
     {
       school: "St. John's Public School",
@@ -176,7 +213,7 @@ export const DATA = {
       dates: "August 2025 - November 2025",
       active: true,
       description:
-        "A comparative study of four AI-assisted multi-agent orchestration workflows, AutoGen Predefined, AutoGen Round Robin, LangChain Nested Sequential, and LangChain Round Robin: used to design, build, test, and document an Electric Appliances E-Commerce Platform. Includes full notebooks, artifacts, and reproducible environment setup.",
+        "Comparative study of multi-agent orchestration workflows using AutoGen and LangChain to build an e-commerce platform. Designed, tested, and documented with reproducible environment setup and full notebooks.",
       technologies: [
         "Replicate API",
         "Open API",
@@ -201,7 +238,7 @@ export const DATA = {
       dates: "Jan 2025 - May 2025",
       active: true,
       description:
-        "This project presents a comprehensive demonstration of how insecure Message Authentication Code (MAC) constructions can be exploited through chosen-message forgery attacks.",
+        "Demonstrates how insecure Message Authentication Code constructions can be exploited through chosen-message forgery attacks. Interactive educational tool with practical cryptographic examples.",
       technologies: [
         "Python",
         "HTML5",
@@ -219,7 +256,7 @@ export const DATA = {
           type: "Source",
           href: "https://github.com/AKSHITHAPRIYADARSHINI/MAC-Scheme-Simulation-Forgery-Attack",
           icon: <Icons.github className="size-3" />,
-        },  
+        },
       ],
       image: "",
       video: "https://cdn.magicui.design/bento-grid.mp4",
@@ -230,7 +267,7 @@ export const DATA = {
       dates: "Aug 2024 - Dec 2024",
       active: true,
       description:
-        "The demonstration follows a practical scenario where Bob signs a message with his private key, encrypts the signature under Alice's public key, and Alice decrypts and verifies the signature using Bob's public key.",
+        "Interactive demonstration of RSA sign-then-encrypt workflow. Shows secure message signing and encryption between two parties with practical cryptographic implementation.",
       technologies: [
         "Python",
         "RSA",
@@ -252,7 +289,7 @@ export const DATA = {
       dates: "Dec 2023 - Jun 2024",
       active: false,
       description:
-        "The Proposed system combines state-of-the-art object detection with deep learning to Comprehensively analyze and detect human behavior in various visual contexts. The system's core components are YOLO v8, an advanced object detection model, and a custom Conv2D network specifically designed for behavior analysis.",
+        "Real-time human behavior analysis using YOLO v8 object detection and custom Conv2D network. Detects abnormal patterns in visual contexts for security applications.",
       technologies: [
         "Python 3.x",
         "YOLOv8",

@@ -26,6 +26,9 @@ type BlogPost = {
 };
 
 function getMDXFiles(dir: string) {
+  if (!fs.existsSync(dir)) {
+    return [];
+  }
   return fs
     .readdirSync(dir)
     .filter(
