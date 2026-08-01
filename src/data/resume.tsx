@@ -82,7 +82,7 @@ export const DATA = {
       },
       X: {
         name: "TryHackMe",
-        url: "https://1drv.ms/b/c/4afe6308ae928d0e/IQB6Hy8X-vvnQ4NvOMXhpE2DAQXEqgsEERnWfcOZVZz3kcg?e=osutjM",
+        url: "https://drive.google.com/file/d/1gN2hsB1CZmtHKA291BPYN1Vyo8QcTqJN/view?usp=sharing",
         icon: Icons.x,
         navbar: false,
       },
