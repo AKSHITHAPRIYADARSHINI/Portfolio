@@ -47,12 +47,26 @@ export const ResumeCard = ({
   verifiedLink,
 }: ResumeCardProps) => {
   const [isExpanded, setIsExpanded] = React.useState(false);
-  const [expandedRole, setExpandedRole] = React.useState<string | null>(null);
+  const [expandedRoles, setExpandedRoles] = React.useState<Set<string>>(
+    new Set()
+  );
   const [mounted, setMounted] = React.useState(false);
 
   React.useEffect(() => {
     setMounted(true);
   }, []);
+
+  const toggleRole = (roleTitle: string) => {
+    setExpandedRoles((prev) => {
+      const next = new Set(prev);
+      if (next.has(roleTitle)) {
+        next.delete(roleTitle);
+      } else {
+        next.add(roleTitle);
+      }
+      return next;
+    });
+  };
 
   const hasContent = description || roles;
 
@@ -168,7 +182,7 @@ export const ResumeCard = ({
                       <button
                         onClick={(e) => {
                           e.stopPropagation();
-                          setExpandedRole(expandedRole === role.title ? null : role.title);
+                          toggleRole(role.title);
                         }}
                         className="w-full flex items-center justify-between text-left py-1 hover:text-blue-500 transition-colors"
                       >
@@ -178,7 +192,7 @@ export const ResumeCard = ({
                           <ChevronRightIcon
                             className={cn(
                               "size-3 text-muted-foreground transition-transform",
-                              expandedRole === role.title ? "rotate-90" : ""
+                              expandedRoles.has(role.title) ? "rotate-90" : ""
                             )}
                           />
                         </div>
@@ -186,7 +200,7 @@ export const ResumeCard = ({
                           {role.start} – {role.end}
                         </span>
                       </button>
-                      {expandedRole === role.title && (
+                      {expandedRoles.has(role.title) && (
                         <div className="pl-6 pb-2 space-y-1">
                           {role.location && (
                             <p className="text-xs text-muted-foreground italic">{role.location}</p>

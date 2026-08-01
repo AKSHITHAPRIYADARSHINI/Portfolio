@@ -76,8 +76,8 @@ export default function Page() {
                 description={(work as any).description}
                 // Render nested roles if available (e.g., Value Aligners has 3 sub-roles)
                 roles={(work as any).roles}
-                // Display location inline only for entries with nested roles
-                location={(work as any).roles ? work.location : undefined}
+                // Display location inline next to the company name
+                location={work.location}
               />
             </BlurFade>
           ))}

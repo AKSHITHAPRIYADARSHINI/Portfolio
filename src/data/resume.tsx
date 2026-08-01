@@ -103,8 +103,27 @@ export const DATA = {
   },
   work: [
     {
+      company: "Cyber Security Summit",
+      location: "Minneapolis, MN",
+      title: "Project Management Intern",
+      logoUrl: "/css.png",
+      start: "July 2026",
+      end: "October 2026",
+      description: (
+        <div className="space-y-1">
+          <p className="text-xs text-muted-foreground italic">Remote &amp; Onsite</p>
+          <ul className="space-y-1 text-muted-foreground">
+            <li>• Supporting the Summit’s mission to bridge tech innovation with policy leadership across critical infrastructure sectors.</li>
+            <li>• Securing sponsors for The Cybersecurity Summit and facilitating weekly meetings with cybersecurity leaders across
+                 critical infrastructure sectors.</li>
+            <li>• Nominated by Summit managers and selected from a group of 20+ interns to be a panelist at the upcoming CSS 16 Summit, representing the intern cohort in discussions centered on "Human-Led, AI-Powered.</li>
+          </ul>
+        </div>
+      ),
+    },
+    {
       company: "Value Aligners",
-      location: "Oakland, California",
+      location: "Oakland, CA",
       title: "Internship",
       logoUrl: "/vl.jpg",
       start: "February 2026", 
@@ -140,7 +159,7 @@ export const DATA = {
           title: "Cybersecurity Marketing Intern",
           start: "Feb '26",
           end: "Mar '26",
-          location: "Oakland, California",
+          location: "Remote",
           description: (
             <ul className="space-y-1 text-muted-foreground ml-2">
               <li>• Researched 20+ cybersecurity vendors and analyzed emerging cloud security trends.</li>
@@ -153,17 +172,20 @@ export const DATA = {
     },
     {
       company: "Ford Motor Pvt Ltd",
-      location: "Onsite",
+      location: "Chennai, TN",
       title: "Software Developer Intern",
       logoUrl: "/atomic.jpg",
       start: "January 2024",
       end: "April 2024",
       description: (
-        <ul className="space-y-1 text-muted-foreground">
-          <li>• Improved internal Struts-based application for Ford Europe.</li>
-          <li>• Completed an NLP project using LLMs for topic generation.</li>
-          <li>• Developed a ticket-analysis tool with Excel export for a 20-member team.</li>
-        </ul>
+        <div className="space-y-1">
+          <p className="text-xs text-muted-foreground italic">Onsite</p>
+          <ul className="space-y-1 text-muted-foreground">
+            <li>• Improved internal Struts-based application for Ford Europe.</li>
+            <li>• Completed an NLP project using LLMs for topic generation.</li>
+            <li>• Developed a ticket-analysis tool with Excel export for a 20-member team.</li>
+          </ul>
+        </div>
       ),
     },
   ],
